@@ -11,25 +11,32 @@
     <div class="content">
         <div class="col-md-12">
             <div class="row">
-                <p>Department: {{$department->dept_name}}</p>
-                <p>Head of department: {{$department->deptManager->emp->first_name}} {{$department->deptManager->emp->last_name}}</p>
+                <div class="col-md-6">
+                    Sort:
+                    <a href="/?sort=asc">Ascending</a>
+                    <a href="/?sort=desc">Descending</a>
+                </div>
             </div>
             <table>
                 <tr>
                     <th>Name</th>
                     <th>Title</th>
+                    <th>Department</th>
+                    <th>Manager</th>
                     <th>Salary</th>
                 </tr>
-                @foreach($deptEmps as $deptEmp)
+                @foreach($employees as $employee)
                     <tr>
-                        <td>{{$deptEmp->deptEmp->first_name}} {{$deptEmp->deptEmp->last_name}}</td>
-                        <td>{{$deptEmp->deptEmp->empTitle->first()->title}}</td>
-                        <td>{{$deptEmp->deptEmp->empSalary->salary}}</td>
+                        <td>{{$employee->first_name}} {{$employee->last_name}}</td>
+                        <td>{{$employee->title}}</td>
+                        <td>{{$employee->dept_name}}</td>
+                        <td>{{$employee->first_name}}</td>
+                        <td>{{$employee->salary}}</td>
                     </tr>
                 @endforeach
             </table>
         </div>
-        <div class="row">{{$deptEmps->links()}}</div>
+        <div class="row">{{$employees->links()}}</div>
     </div>
 </div>
 </body>

@@ -12,7 +12,11 @@
 */
 
 Route::get('/', 'NewController@index');
+Route::get('/index2', 'NewController@index2');
 Route::get('/departments', 'NewController@departments');
 Route::get('/depEmps/{id}', 'NewController@deptEmp');
 Route::get('/index', 'AlternativeController@index');
-Route::get('/statistics', 'NewController@statistics');
+Route::get('/averagesalary', 'NewController@avgSalary');
+Route::get('/genders', 'NewController@gender');
+Route::get('/maxsalary', 'NewController@maxsalary');
+Route::get('/age', 'NewController@age');

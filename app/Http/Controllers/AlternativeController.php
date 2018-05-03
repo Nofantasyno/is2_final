@@ -29,6 +29,6 @@ class AlternativeController extends Controller
             ->limit(1000)
             ->paginate(20);
 
-        return view('index', ['employees' => $employees, 'dept_managers' => $dept_managers]);
+        return view('alter', ['employees' => $employees, 'dept_managers' => $dept_managers]);
     }
 }

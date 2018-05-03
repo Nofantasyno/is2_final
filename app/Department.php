@@ -8,6 +8,6 @@ class Department extends Model
 {
     public $table = 'departments';
     public function deptManager(){
-        return $this->hasMany(Dept_manager::class, 'dept_no', 'dept_no');
+        return $this->hasOne(Dept_manager::class, 'dept_no', 'dept_no')->latest('to_date');
     }
 }

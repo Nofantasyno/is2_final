@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Dept_emp extends Model
 {
     public $table ='dept_emp';
-    public $primaryKey = 'dept_no';
     public function department(){
         return $this->hasOne(Department::class, 'dept_no', 'dept_no');
     }

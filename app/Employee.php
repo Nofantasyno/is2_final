@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 class Employee extends Model
 {
     public $table = 'employees';
@@ -28,5 +28,9 @@ class Employee extends Model
         return $this->hasMany(Dept_manager::class, 'emp_no', 'emp_no');
     }
 
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->attributes['birth_date'])->age;
+    }
 
 }
